@@ -1,38 +1,112 @@
-.App {
+/* Todos */
+.todo-list ul {
+  padding: 0 10px 0px 10px;
+  list-style-type: none;
+}
+ 
+.todo-list li {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background: rgb(240, 240, 240);
+  color: black;
+}
+
+.todo-list li.completed {
+  background: rgb(119, 218, 243);
+}
+ 
+.todo-list li button {
+  float: right;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+  margin-top: -7px;
+  font-size: 25px;
+}
+ 
+.todo-list li button:hover {
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+  padding: 5px;
   text-align: center;
+  background: rgb(240, 240, 240);
+  color: black;
+  display: block;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ 
+.navbar ul {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.btn-logout {
+  width: 100px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #bba38c;
+  cursor: pointer;
+}
+ 
+/* TodoForm */
+form {
+  padding: 10px;
+}
+
+input[type='text'] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 6px 0;
+  border: 0;
+}
+ 
+input[type='submit'] {
+  margin: 10px auto;
+  padding: 10px;
+  border: 0;
+  display: block;
+}
+
+.add-todo {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.btn-add {
+  width: 100px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #7165dd;
+  cursor: pointer;
+}
+
+/* TodoList */
+.pagination {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.btn {
+  margin: 0 30px ;
+  margin-bottom: 10px;
   color: white;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  border-radius: 2px;
+  width: 60px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hide-button {
+  opacity: 0.5;
 }
