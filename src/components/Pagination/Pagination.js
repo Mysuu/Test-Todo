@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Pagination = ({ page, setPage }) => {
   const count = useSelector((state) => state.todoReducer.count);
@@ -26,18 +27,22 @@ const Pagination = ({ page, setPage }) => {
 
   return (
     <div className="pagination">
-      <button
-        className={`btn ${page === 1 ? "hide-button" : ""}`}
-        onClick={prevPage}
-      >
-        Back
-      </button>
-      <button
-        className={`btn ${page === totalPage ? "hide-button" : ""}`}
-        onClick={nextPage}
-      >
-        Next
-      </button>
+      <Link to={`?page=${page - 1}`}>
+        <button
+          className={`btn ${page === 1 ? "hide-button" : ""}`}
+          onClick={prevPage}
+        >
+          Back
+        </button>
+      </Link>
+      <Link to={`?page=${page + 1}`}>
+        <button
+          className={`btn ${page === totalPage ? "hide-button" : ""}`}
+          onClick={nextPage}
+        >
+          Next
+        </button>
+      </Link>
     </div>
   );
 };
