@@ -1,0 +1,95 @@
+/* Todos */
+.todo-list ul {
+  padding: 0 10px 0px 10px;
+  list-style-type: none;
+}
+ 
+.todo-list li {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background: rgb(240, 240, 240);
+  color: black;
+}
+
+.todo-list li.completed {
+  background: rgb(119, 218, 243);
+}
+ 
+.todo-list li button {
+  float: right;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+  margin-top: -7px;
+  font-size: 25px;
+}
+ 
+.todo-list li button:hover {
+  cursor: pointer;
+}
+
+/* TodoForm */
+form {
+  padding: 10px;
+}
+
+input[type='text'] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 6px 0;
+  border: 0;
+}
+ 
+input[type='submit'] {
+  margin: 10px auto;
+  padding: 10px;
+  border: 0;
+  display: block;
+}
+
+.add-todo {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.btn-add {
+  width: 100px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+  border: none;
+  background-color: #7165dd;
+  cursor: pointer;
+}
+
+.todo-form {
+  display: flex;
+  width: 100%;
+}
+
+.input-form {
+  margin-right: 10px!important;
+  border-radius: 3px;
+}
+
+/* TodoList */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 0 30px ;
+  margin-bottom: 10px;
+  color: white;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  border-radius: 2px;
+  width: 60px;
+}
+
+.hide-button {
+  opacity: 0.5;
+}

@@ -6,7 +6,7 @@ import { autoLogin } from "../redux/Form/actions";
 const PrivateForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isLogin } = useSelector((state) => state.formReducer);
+  const isLogin = useSelector((state) => state.formReducer.isLogin);
   const user = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
     user?.accessToken && dispatch(autoLogin());

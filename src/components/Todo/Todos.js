@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { getAllTodo } from "../../redux/Todo/actions";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import "./Todo.css";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
@@ -24,6 +25,3 @@ const Todos = () => {
 };
 
 export default Todos;
-//fix k nhap gi van them duoc
-//k nhap gi van sua duoc
-//validate sign up

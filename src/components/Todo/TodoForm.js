@@ -22,7 +22,8 @@ const TodoForm = ({ todos, setTodos, page }) => {
     }
   }, [setTodos, valueEdit]);
 
-  const handleEditTodo = (e) => {
+  const handleEditTodo = (e, todos) => {
+    if (!todos) return;
     e.preventDefault();
     const dataTodoEdit = {
       _id: valueEdit._id,
@@ -35,8 +36,9 @@ const TodoForm = ({ todos, setTodos, page }) => {
 
   return (
     <div>
-      <form>
+      <form className="todo-form">
         <input
+          className="input-form"
           type="text"
           required
           placeholder={!valueEdit ? "Enter a Todo..." : ""}
@@ -49,7 +51,11 @@ const TodoForm = ({ todos, setTodos, page }) => {
               Add
             </button>
           ) : (
-            <button onClick={handleEditTodo} className="btn-add" type="submit">
+            <button
+              onClick={(e) => handleEditTodo(e, todos)}
+              className="btn-add"
+              type="submit"
+            >
               Save
             </button>
           )}
