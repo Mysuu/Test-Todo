@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTodo, editTodo } from "../../redux/Todo/actions";
 import Pagination from "../Pagination/Pagination";
+import { Popconfirm } from "antd";
+import { QuestionCircleOutlined } from "@ant-design/icons";
 
 const TodoList = ({ setPage, page }) => {
   const todos = useSelector((state) => state.todoReducer.data);
@@ -22,12 +24,19 @@ const TodoList = ({ setPage, page }) => {
           todos.map((todo) => (
             <li key={todo._id}>
               {todo.title}
-              <button
-                style={{ color: "red" }}
-                onClick={() => handleDeleteTodo(todo)}
+              <Popconfirm
+                title="Bạn có chắc muốn xoá phòng?"
+                icon={<QuestionCircleOutlined style={{ color: "red" }} />}
+                placement="leftBottom"
+                onConfirm={() => handleDeleteTodo(todo)}
+                okText="Chắc"
+                okType="danger"
+                cancelText="Không"
               >
-                <i className="fa fa-trash"></i>
-              </button>
+                <button style={{ color: "red" }}>
+                  <i className="fa fa-trash"></i>
+                </button>
+              </Popconfirm>
               <button
                 style={{ color: "orange" }}
                 onClick={() => handleEditTodo(todo)}

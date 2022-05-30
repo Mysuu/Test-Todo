@@ -21,7 +21,7 @@
   border: none;
   outline: none;
   margin-right: 10px;
-  margin-top: -7px;
+  margin-top: -10px;
   font-size: 25px;
 }
  
@@ -57,7 +57,7 @@ input[type='submit'] {
 .btn-add {
   width: 100px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 3px;
   border: none;
   background-color: #7165dd;
