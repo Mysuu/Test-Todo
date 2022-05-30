@@ -4,13 +4,21 @@ import { deleteTodo, editTodo } from "../../redux/Todo/actions";
 import Pagination from "../Pagination/Pagination";
 import { Popconfirm } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const TodoList = ({ setPage, page }) => {
   const todos = useSelector((state) => state.todoReducer.data);
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const handleDeleteTodo = (todo) => {
-    dispatch(deleteTodo(todo._id, page));
+    if (todos.length > 1 && page > 1) {
+      dispatch(deleteTodo(todo._id, page));
+    } else {
+      setPage(page - 1);
+      navigate(`/todo?page=${page - 1}`);
+      dispatch(deleteTodo(todo._id, page - 1));
+    }
   };
 
   const handleEditTodo = (todo) => {
