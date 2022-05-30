@@ -25,7 +25,7 @@ const TodoList = ({ setPage, page }) => {
             <li key={todo._id}>
               {todo.title}
               <Popconfirm
-                title="Bạn có chắc muốn xoá phòng?"
+                title="Bạn có chắc muốn xoá?"
                 icon={<QuestionCircleOutlined style={{ color: "red" }} />}
                 placement="leftBottom"
                 onConfirm={() => handleDeleteTodo(todo)}
