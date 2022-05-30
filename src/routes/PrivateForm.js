@@ -14,7 +14,7 @@ const PrivateForm = () => {
 
   useEffect(() => {
     if (isLogin) {
-      return navigate("/todo", { replace: true });
+      return navigate("/todo?page=1", { replace: true });
     }
   }, [isLogin, navigate]);
 

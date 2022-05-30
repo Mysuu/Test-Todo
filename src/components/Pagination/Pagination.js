@@ -17,17 +17,17 @@ const Pagination = ({ page, setPage }) => {
 
   const nextPage = () => {
     if (page === totalPage) return;
-    setPage(page + 1);
+    setPage(parseInt(page) + 1);
   };
 
   const prevPage = () => {
     if (page === 1) return;
-    setPage(page - 1);
+    setPage(parseInt(page) - 1);
   };
 
   return (
     <div className="pagination">
-      <Link to={`?page=${page - 1}`}>
+      <Link to={`?page=${parseInt(page) - 1}`}>
         <button
           className={`btn ${page === 1 ? "hide-button" : ""}`}
           onClick={prevPage}
@@ -35,7 +35,7 @@ const Pagination = ({ page, setPage }) => {
           Back
         </button>
       </Link>
-      <Link to={`?page=${page + 1}`}>
+      <Link to={`?page=${parseInt(page) + 1}`}>
         <button
           className={`btn ${page === totalPage ? "hide-button" : ""}`}
           onClick={nextPage}

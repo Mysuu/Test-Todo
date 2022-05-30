@@ -29,7 +29,7 @@ const Login = () => {
       const user = { username: values.username, password: values.password };
       dispatch(login(user));
       setValue("");
-      navigate("/todo");
+      navigate("/todo?page=1");
     },
   });
 
