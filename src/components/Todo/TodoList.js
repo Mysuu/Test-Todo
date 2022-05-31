@@ -12,7 +12,7 @@ const TodoList = ({ setPage, page }) => {
   let navigate = useNavigate();
 
   const handleDeleteTodo = (todo) => {
-    if (todos.length > 1 && page > 1) {
+    if (todos.length > 1 && page >= 1) {
       dispatch(deleteTodo(todo._id, page));
     } else {
       setPage(page - 1);
