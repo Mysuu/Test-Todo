@@ -11,8 +11,6 @@ function PrivateTodo() {
     }
   }, [isLogin, navigate]);
 
-  if (!isLogin) return null;
-
   return <Outlet />;
 }
 
