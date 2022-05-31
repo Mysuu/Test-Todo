@@ -23,7 +23,7 @@ const TodoForm = ({ todos, setTodos, page }) => {
   }, [setTodos, valueEdit]);
 
   const handleEditTodo = (e, todos) => {
-    if (!todos) return;
+    if (!todos) return; //k nhập k cho save
     e.preventDefault();
     const dataTodoEdit = {
       _id: valueEdit._id,
